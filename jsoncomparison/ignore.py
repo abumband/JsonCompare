@@ -67,7 +67,14 @@ class Ignore(ABC):
             return cls._ignore_list_items(obj, rule)
         if key == '_range':
             return cls._ignore_range(obj, rule)
+        if key == '_bool':
+            return cls._ignore_bool(obj, rule)
         return obj
+
+
+    @classmethod
+    def _ignore_bool(cls, obj, rule):
+        return obj if type(obj) != bool
 
     @classmethod
     def _ignore_list_items(cls, obj, rule):
