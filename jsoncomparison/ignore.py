@@ -74,7 +74,7 @@ class Ignore(ABC):
 
     @classmethod
     def _ignore_bool(cls, obj, rule):
-        return obj if type(obj) != bool
+        return obj if type(obj) != bool else bool
 
     @classmethod
     def _ignore_list_items(cls, obj, rule):
